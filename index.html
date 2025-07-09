@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mundo Linux</title>
+    <link rel="stylesheet" href="CSS.css">
+</head>
+<body>
+    <header>
+        <h1>El mundo derivado de Linux</h1>
+    </header>
+
+    <section id="introduccion">
+        <p>
+            Desde su nacimiento en 1991, Linux ha dado origen a una gran variedad de sistemas operativos conocidos como
+            "distribuciones". Estas distros comparten el núcleo Linux pero están orientadas a distintos tipos de usuarios:
+            desde principiantes hasta expertos en servidores o ciberseguridad. Hoy exploraremos algunas de las más
+            importantes e influyentes, tanto por su historia como por su comunidad.
+        </p>
+    </section>
+
+    <section id="interaccion">
+
+        <div class="imagen-centro">
+            <img src="image.jpg" alt="Logo Linux" width="250">
+        </div>
+
+        <label for="distros">Selecciona una distribución:</label>
+        <select id="distros" onchange="mostrarInfo()">
+            <option value="">-- Elige una --</option>
+            <option value="ubuntu">Ubuntu</option>
+            <option value="debian">Debian</option>
+            <option value="mint">Linux Mint</option>
+            <option value="fedora">Fedora</option>
+            <option value="arch">Arch Linux</option>
+        </select>
+
+        <div id="info"></div>
+    </section>
+
+    <script>
+        function mostrarInfo() {
+            const info = {
+                ubuntu: `
+                    <h2>Ubuntu</h2>
+                    <p>Ubuntu es una distribución basada en Debian, desarrollada por Canonical Ltd. Está enfocada en la facilidad de uso y en ofrecer una experiencia moderna tanto en escritorios como en servidores.</p>
+                    <ul>
+                        <li><strong>Lanzamiento inicial:</strong> 2004</li>
+                        <li><strong>Entorno por defecto:</strong> GNOME</li>
+                        <li><strong>Ideal para:</strong> Principiantes, desarrolladores, uso general</li>
+                        <li><strong>Actualizaciones:</strong> LTS (5 años) y versiones regulares (9 meses)</li>
+                    </ul>
+                `,
+                debian: `
+                    <h2>Debian</h2>
+                    <p>Debian es una de las distribuciones más antiguas y respetadas. Conocida por su estabilidad, es la base de muchas otras distros, incluido Ubuntu.</p>
+                    <ul>
+                        <li><strong>Lanzamiento inicial:</strong> 1993</li>
+                        <li><strong>Entorno por defecto:</strong> GNOME (personalizable)</li>
+                        <li><strong>Ideal para:</strong> Servidores, usuarios avanzados</li>
+                        <li><strong>Filosofía:</strong> Software libre, comunidad abierta</li>
+                    </ul>
+                `,
+                mint: `
+                    <h2>Linux Mint</h2>
+                    <p>Linux Mint nace como una alternativa a Ubuntu, con una interfaz más parecida a Windows. Es una de las opciones más recomendadas para nuevos usuarios.</p>
+                    <ul>
+                        <li><strong>Lanzamiento inicial:</strong> 2006</li>
+                        <li><strong>Entorno por defecto:</strong> Cinnamon (también MATE y Xfce)</li>
+                        <li><strong>Ideal para:</strong> Usuarios domésticos, migrantes de Windows</li>
+                        <li><strong>Ventaja:</strong> Funciona bien en hardware antiguo</li>
+                    </ul>
+                `,
+                fedora: `
+                    <h2>Fedora</h2>
+                    <p>Fedora es patrocinada por Red Hat y sirve como plataforma de pruebas para tecnologías que luego llegan a Red Hat Enterprise Linux.</p>
+                    <ul>
+                        <li><strong>Lanzamiento inicial:</strong> 2003</li>
+                        <li><strong>Entorno por defecto:</strong> GNOME</li>
+                        <li><strong>Ideal para:</strong> Desarrolladores, entusiastas de tecnología</li>
+                        <li><strong>Foco:</strong> Software libre, innovación rápida</li>
+                    </ul>
+                `,
+                arch: `
+                    <h2>Arch Linux</h2>
+                    <p>Arch Linux es una distribución minimalista, diseñada para que el usuario tenga control total sobre su sistema. Requiere instalación manual y conocimientos técnicos.</p>
+                    <ul>
+                        <li><strong>Lanzamiento inicial:</strong> 2002</li>
+                        <li><strong>Entorno por defecto:</strong> Ninguno (el usuario lo elige)</li>
+                        <li><strong>Ideal para:</strong> Usuarios avanzados, entusiastas del control total</li>
+                        <li><strong>Filosofía:</strong> KISS (Keep It Simple, Stupid)</li>
+                    </ul>
+                `
+            };
+
+            const seleccion = document.getElementById('distros').value;
+            const infoDiv = document.getElementById('info');
+
+            infoDiv.innerHTML = info[seleccion] || '';
+        }
+    </script>
+    <footer>
+        <p>Diseñado por Mateo Morales & Andrés Jumbo</p>
+    </footer>    
+</body>
+</html>
