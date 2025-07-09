@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Explorando el Mundo Linux</title>
+    <link rel="stylesheet" href="CSS.css">
+</head>
+<body>
+    <header>
+        <h1>Explorando el Mundo Linux: Derivados que Marcaron Época</h1>
+    </header>
+
+    <section id="introduccion">
+        <p>Linux es mucho más que un sistema operativo. Es la base de una familia extensa de sistemas derivados que han revolucionado desde el escritorio hasta los servidores. Aquí te presentamos algunos de los más influyentes.</p>
+    </section>
+
+    <section id="interaccion">
+        <label for="distros">Selecciona una distribución:</label>
+        <select id="distros" onchange="mostrarInfo()">
+            <option value="">-- Elige una --</option>
+            <option value="ubuntu">Ubuntu</option>
+            <option value="debian">Debian</option>
+            <option value="mint">Linux Mint</option>
+            <option value="fedora">Fedora</option>
+            <option value="arch">Arch Linux</option>
+        </select>
+
+        <div id="info"></div>
+    </section>
+
+    <script>
+        function mostrarInfo() {
+            const info = {
+                ubuntu: `<h2>Ubuntu</h2><p>Una de las distribuciones más populares. Basada en Debian, se centra en la facilidad de uso.</p>`,
+                debian: `<h2>Debian</h2><p>Una de las más antiguas y estables. Base para muchas otras distribuciones.</p>`,
+                mint: `<h2>Linux Mint</h2><p>Basada en Ubuntu, orientada a usuarios que vienen de Windows.</p>`,
+                fedora: `<h2>Fedora</h2><p>Respaldada por Red Hat. Enfocada en tecnologías de vanguardia.</p>`,
+                arch: `<h2>Arch Linux</h2><p>Minimalista y altamente personalizable. Filosofía KISS: 'Keep It Simple, Stupid'.</p>`
+            };
+
+            const seleccion = document.getElementById('distros').value;
+            const infoDiv = document.getElementById('info');
+
+            infoDiv.innerHTML = info[seleccion] || '';
+        }
+    </script>
+</body>
+</html>
